@@ -28,12 +28,16 @@ class BaseModel:
                 elif key == 'created_at' or key == 'updated_at':
                     """ Converts datetime string to datetime format """
                     setattr(self, key, datetime.strptime(value,
-                                                         "%Y-%m-%dT%H:%M:%S.\
-                                                          %f"))
+                                                         "%Y-%m-%dT%H:%M:%S.%f"
+                                                         ))
                 else:
                     setattr(self, key, value)
             if 'id' not in kwargs.keys():
                 self.id = str(uuid.uuid4())
+            if 'created_at' not in kwargs.keys():
+                self.created_at = datetime.now()
+            if 'updated_at' not in kwargs.keys():
+                self.updated_at = datetime.now()
 
     def __str__(self):
         """Returns a string representation of the instance"""
