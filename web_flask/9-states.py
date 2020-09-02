@@ -19,7 +19,7 @@ def states():
     states.sort(key=lambda x: x.name)
 
     from flask import render_template
-    return render_template('7-st5ates_list.html', states=states)
+    return render_template('7-states_list.html', states=states)
 
 
 @app.route('/states/<id>', strict_slashes=False)
