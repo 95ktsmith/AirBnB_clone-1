@@ -27,4 +27,6 @@ class State(BaseModel, Base):
             if value.to_dict()['state_id'] == self.id:
                 c_dict.append(value)
 
+        c_dict.sort(key=lambda x: x.name)
+
         return c_dict
