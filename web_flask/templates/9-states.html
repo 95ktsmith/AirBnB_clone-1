@@ -9,11 +9,9 @@
         {% else %}
         <H1>State: {{ state.name }}</H1>
         <H3>Cities:</H3>
-        <UL>
-            {% for city in state.cities %}
+        <UL>{% for city in state.cities %}
                 <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
-            {% endfor %}
-        </UL>
+        {% endfor %}</UL>
         {% endif %}
     </BODY>
 </HTML>
